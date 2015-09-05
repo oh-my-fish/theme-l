@@ -23,13 +23,15 @@ function fish_right_prompt
       end
     end
 
-    if [ "$theme_display_rbenv_with_gemfile_only" = '' ]
-      echo -n -s $ruby_info $normal
-    else if [ "$theme_display_rbenv_with_gemfile_only" = 'yes' ]
+    if [ "$theme_display_rbenv_with_gemfile_only" = 'yes' ]
       if test -f Gemfile
         echo -n -s $ruby_info $normal
       end
+      return
+    else
+      echo -n -s $ruby_info $normal
     end
+
   end
 end
 

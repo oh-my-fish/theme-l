@@ -33,7 +33,7 @@ Only if fish_theme_l_right_prompt variable is set true within config.fish:
 ```fish
 set theme_display_rbenv 'yes'
 set theme_display_rbenv_gemset 'yes'
-# if you want to display rbenv ruby version only with directories that containing Gemfile
+# if you want to display rbenv ruby version only within directories that contain Gemfile
 set theme_display_rbenv_with_gemfile_only 'yes'
 ```
 
