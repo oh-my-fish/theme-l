@@ -1,6 +1,7 @@
 # To show the right prompt please set
 # set theme_display_rbenv 'yes' (config.fish)
 # set theme_display_rbenv_gemset 'yes' (config.fish)
+# set theme_display_rbenv_with_gemfile_only 'yes' (config.fish)
 
 function _ruby_version
   echo (command rbenv version-name | sed 's/\n//')
@@ -26,12 +27,12 @@ function fish_right_prompt
     if [ "$theme_display_rbenv_with_gemfile_only" = 'yes' ]
       if test -f Gemfile
         echo -n -s $ruby_info $normal
+      else
+        echo -n -s $normal
       end
-      return
     else
       echo -n -s $ruby_info $normal
     end
-
   end
 end
 
