@@ -30,6 +30,9 @@ $ omf theme l
 ## Configuration
 
 Only if fish_theme_l_right_prompt variable is set true within config.fish:
+
+### rbenv support
+
 ```fish
 set theme_display_rbenv 'yes'
 set theme_display_rbenv_gemset 'yes'
@@ -44,6 +47,17 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 <img src="http://f.cl.ly/items/0f0k3o2L3y2q1L3g1R1X/5.png">
 </p>
 
+
+### Python venv support
+
+If you're using [virtualfish][] and enable the `theme_display_venv` setting with
+the following line in your `config.fish`, the currently active virtualenv is
+part of the right-side-prompt, highlighted in green:
+
+```fish
+set theme_dispay_venv 'yes'
+```
+
 # License
 
 [MIT][mit] © [bpinto][author] et [al][contributors]
@@ -57,4 +71,4 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 [travis-badge]:   http://img.shields.io/travis/oh-my-fish/theme-default.svg?style=flat-square
 [travis-link]:    https://travis-ci.org/oh-my-fish/theme-default
-
+[virtualfish]:    https://github.com/adambrenecki/virtualfish
