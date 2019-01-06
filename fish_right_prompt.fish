@@ -8,7 +8,7 @@ function _ruby_version
 end
 
 function _ruby_gemset
-  echo (command rbenv gemset active ^/dev/null | sed -e 's| global||')
+  echo (command rbenv gemset active 2> /dev/null | sed -e 's| global||')
 end
 
 function fish_right_prompt
