@@ -2,6 +2,7 @@
 # set theme_display_rbenv 'yes' (config.fish)
 # set theme_display_rbenv_gemset 'yes' (config.fish)
 # set theme_display_rbenv_with_gemfile_only 'yes' (config.fish)
+# set theme_display_venv 'yes' (config.fish)
 
 function _ruby_version
   echo (command rbenv version-name | sed 's/\n//')
@@ -9,6 +10,15 @@ end
 
 function _ruby_gemset
   echo (command rbenv gemset active 2> /dev/null | sed -e 's| global||')
+end
+
+function _show_venv
+  if [ "$VIRTUAL_ENV" ]
+    if [ "$theme_display_rbenv" = 'yes' ]
+       echo -n " "
+    end
+    echo -n -s (set_color green) (basename $VIRTUAL_ENV) (set_color normal)()
+  end
 end
 
 function fish_right_prompt
@@ -33,5 +43,9 @@ function fish_right_prompt
     else
       echo -n -s $ruby_info $normal
     end
+  end
+
+  if [ "$theme_display_venv" = 'yes' ]
+    _show_venv
   end
 end
